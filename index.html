@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lower Back Strain Recovery Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --text: #1a1a1a;
+    --muted: #6b6560;
+    --accent: #c04b2d;
+    --accent-light: #e8643f;
+    --card-bg: #ffffff;
+    --border: #e0dbd4;
+    --phase1: #3a7ca5;
+    --phase2: #5a9e6f;
+    --phase3: #d4872c;
+    --phase4: #c04b2d;
+    --warmup: #7b5ea7;
+    --svg-body: #1a1a1a;
+    --svg-floor: #c0bab2;
+    --svg-arrow: #c04b2d;
+    --svg-band: #5a9e6f;
+    --svg-bg: #f0ece4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2520 50%, #3a2a1f 100%);
+    color: #fff;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 70%, rgba(192,75,45,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(58,124,165,0.1) 0%, transparent 50%);
+    animation: drift 20s ease-in-out infinite alternate;
+  }
+  @keyframes drift {
+    from { transform: translate(0, 0) rotate(0deg); }
+    to { transform: translate(-3%, 3%) rotate(2deg); }
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    letter-spacing: -0.02em;
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+  .hero .subtitle {
+    color: rgba(255,255,255,0.6);
+    font-size: 1.05rem;
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .overview {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .overview p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+  .callout {
+    background: #fef3e8;
+    border-left: 4px solid var(--phase3);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.92rem;
+    color: #5a3e1a;
+    margin-top: 1.5rem;
+  }
+
+  .phase {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .phase-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fff;
+  }
+  .phase-badge.p1 { background: var(--phase1); }
+  .phase-badge.p2 { background: var(--phase2); }
+  .phase-badge.p3 { background: var(--phase3); }
+  .phase-badge.p4 { background: var(--phase4); }
+  .phase-badge.warmup { background: var(--warmup); }
+
+  .phase h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    letter-spacing: -0.01em;
+  }
+  .phase-timeline {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    margin: 2rem 0 1rem;
+    color: var(--text);
+  }
+
+  .exercise-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    transition: box-shadow 0.2s;
+  }
+  .exercise-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  @media (max-width: 600px) {
+    .exercise-card {
+      grid-template-columns: 1fr;
+    }
+    .exercise-card .illust {
+      justify-self: center;
+    }
+  }
+  .exercise-card .illust {
+    background: var(--svg-bg);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+  .exercise-card .illust svg {
+    width: 100%;
+    height: 100%;
+  }
+  .exercise-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+  .exercise-card p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .exercise-card .sets {
+    display: inline-block;
+    margin-top: 0.5rem;
+    background: var(--svg-bg);
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .tip-list {
+    list-style: none;
+    padding: 0;
+  }
+  .tip-list li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .tip-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .tip-list li strong { color: var(--text); }
+
+  .run-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+  }
+  .run-table th {
+    background: var(--svg-bg);
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+  }
+  .run-table td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .run-table tr:last-child td { border-bottom: none; }
+
+  .principles {
+    background: linear-gradient(135deg, #1a1a1a, #2d2520);
+    color: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+  .principles h3 {
+    color: #fff;
+    margin-top: 0;
+  }
+  .principles li {
+    margin-bottom: 0.75rem;
+    color: rgba(255,255,255,0.75);
+    font-size: 0.92rem;
+  }
+  .principles li strong { color: #fff; }
+
+  .timeline-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin: 2rem 0 3rem;
+  }
+  .timeline-bar .tl-item {
+    text-align: center;
+    padding: 1rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  .timeline-bar .tl-item span {
+    display: block;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-top: 0.25rem;
+    font-size: 0.72rem;
+  }
+  @media (max-width: 500px) {
+    .timeline-bar { grid-template-columns: 1fr 1fr; }
+  }
+
+  footer {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .section-note {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .massage-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .massage-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+  .massage-card p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Lower Back Strain<br>Recovery Plan</h1>
+  <p class="subtitle">A phased guide for sprinting-related lower back injuries — stretches, strengthening, massage & return-to-play.</p>
+</div>
+
+<div class="container">
+
+  <!-- TIMELINE BAR -->
+  <div class="timeline-bar">
+    <div class="tl-item" style="background:var(--phase1)">Phase 1<span>Days 1–5 · Acute</span></div>
+    <div class="tl-item" style="background:var(--phase2)">Phase 2<span>Days 6–14 · Subacute</span></div>
+    <div class="tl-item" style="background:var(--phase3)">Phase 3<span>Days 15–28 · Loading</span></div>
+    <div class="tl-item" style="background:var(--phase4)">Phase 4<span>Days 28–42 · Running</span></div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="overview">
+    <p>A lower back strain from sprinting typically involves the erector spinae, quadratus lumborum (QL), or multifidus muscles. In Australian football the combination of explosive acceleration, kicking, and direction changes can overload the lumbar extensors — especially if the glutes aren't firing optimally and the lower back compensates.</p>
+    <div class="callout">
+      <strong>⚠ Seek medical attention immediately</strong> if you experience numbness or tingling down your legs, loss of bladder/bowel control, or pain that worsens significantly over the first week rather than improving.
+    </div>
+  </div>
+
+  <!-- ==================== PHASE 1 ==================== -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-badge p1">Phase 1</span>
+    </div>
+    <h2>Acute</h2>
+    <p class="phase-timeline">Days 1–5 · Reduce inflammation, protect the area, begin gentle movement</p>
+
+    <ul class="tip-list">
+      <li><strong>Avoid prolonged sitting and bed rest.</strong> Alternate between walking, standing, and lying down.</li>
+      <li><strong>Ice</strong> 15–20 min on / 40 min off for the first 48–72 hours. After 72 hours, switch to heat or alternate.</li>
+      <li><strong>Heat</strong> from day 3–4 onward — moist heat (hot pack, warm shower) for 15–20 min to relax spasm.</li>
+      <li><strong>Walk frequently.</strong> Short walks (10–15 min) every few hours.</li>
+    </ul>
+
+    <h3>Gentle Movement</h3>
+    <p class="section-note">Perform 2–3× daily. Stop any movement that produces sharp pain.</p>
+
+    <!-- Pelvic Tilt -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="105" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <!-- body lying down -->
+          <ellipse cx="38" cy="94" rx="9" ry="9" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <!-- torso -->
+          <line x1="47" y1="94" x2="80" y2="97" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- upper legs -->
+          <line x1="80" y1="97" x2="95" y2="78" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- lower legs -->
+          <line x1="95" y1="78" x2="95" y2="105" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- second leg -->
+          <line x1="80" y1="97" x2="105" y2="82" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="105" y1="82" x2="105" y2="105" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- arrow showing pelvic motion -->
+          <path d="M 68 88 Q 65 78 72 75" fill="none" stroke="#c04b2d" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow1)"/>
+          <defs><marker id="arrow1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#c04b2d"/></marker></defs>
+          <!-- label -->
+          <text x="70" y="32" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" font-weight="600" fill="#1a1a1a">Pelvic Tilt</text>
+          <text x="70" y="44" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7.5" fill="#6b6560">Flatten low back</text>
+          <text x="70" y="55" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7.5" fill="#6b6560">into floor</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Pelvic Tilts (Supine)</h4>
+        <p>Lie on your back, knees bent, feet flat. Gently flatten your lower back into the floor by tilting your pelvis posteriorly, then release. No forceful pressing.</p>
+        <span class="sets">2 × 10 reps · slow and controlled</span>
+      </div>
+    </div>
+
+    <!-- Knees to Chest -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="108" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="32" cy="98" rx="9" ry="9" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <line x1="41" y1="98" x2="80" y2="100" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- bent leg pulled to chest -->
+          <line x1="80" y1="100" x2="68" y2="78" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="68" y1="78" x2="60" y2="90" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- hands on knee -->
+          <line x1="55" y1="92" x2="66" y2="80" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 2"/>
+          <!-- other leg flat -->
+          <line x1="80" y1="100" x2="115" y2="108" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- arrow -->
+          <path d="M 74 74 Q 66 68 58 74" fill="none" stroke="#c04b2d" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow1)"/>
+          <text x="70" y="32" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" font-weight="600" fill="#1a1a1a">Knee to Chest</text>
+          <text x="70" y="44" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7.5" fill="#6b6560">Pull one knee gently</text>
+          <text x="70" y="55" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7.5" fill="#6b6560">toward chest</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Knees-to-Chest (Single Leg)</h4>
+        <p>Gently pull one knee toward your chest with both hands until a mild stretch is felt in the lower back. Keep the opposite leg extended or bent on the floor.</p>
+        <span class="sets">Hold 20–30 sec · 2–3 reps per side</span>
+      </div>
+    </div>
+
+    <!-- Supine Rotation -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="108" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="32" cy="96" rx="9" ry="9" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <!-- arms out -->
+          <line x1="45" y1="85" x2="45" y2="108" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <!-- torso -->
+          <line x1="41" y1="96" x2="78" y2="98" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- knees dropping to one side -->
+          <line x1="78" y1="98" x2="92" y2="80" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="92" y1="80" x2="108" y2="92" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="78" y1="98" x2="96" y2="84" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="96" y1="84" x2="114" y2="94" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- rotation arrow -->
+          <path d="M 85 100 Q 95 108 105 100" fill="none" stroke="#c04b2d" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow1)"/>
+          <text x="70" y="30" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" font-weight="600" fill="#1a1a1a">Spinal Rotation</text>
+          <text x="70" y="42" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7.5" fill="#6b6560">Knees drop gently</text>
+          <text x="70" y="53" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7.5" fill="#6b6560">to each side</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Supine Spinal Rotation</h4>
+        <p>Knees bent, feet flat. Let both knees fall gently to one side, keeping shoulders on the ground. Only go as far as is comfortable.</p>
+        <span class="sets">Hold 20–30 sec each side · 2–3 reps</span>
+      </div>
+    </div>
+
+    <!-- Cat Cow -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="115" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <!-- CAT position (top) -->
+          <text x="35" y="22" font-family="DM Sans, sans-serif" font-size="7" fill="#6b6560">Cat</text>
+          <ellipse cx="22" cy="42" rx="6" ry="6" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+          <path d="M 28 42 Q 50 26 72 42" fill="none" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="28" y1="42" x2="28" y2="58" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <line x1="72" y1="42" x2="72" y2="58" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <!-- COW position (bottom) -->
+          <text x="80" y="72" font-family="DM Sans, sans-serif" font-size="7" fill="#6b6560">Cow</text>
+          <ellipse cx="68" cy="90" rx="6" ry="6" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+          <path d="M 74 90 Q 96 104 118 90" fill="none" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="74" y1="90" x2="74" y2="115" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <line x1="118" y1="90" x2="118" y2="115" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <!-- arrows between -->
+          <path d="M 52 52 L 82 78" fill="none" stroke="#c04b2d" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arrow1)"/>
+        </svg>
+      </div>
+      <div>
+        <h4>Cat-Cow</h4>
+        <p>On all fours. Slowly round the back (cat), then gently extend (cow). Keep the range small — you're just mobilizing, not stretching hard.</p>
+        <span class="sets">2 × 8 reps · very gentle</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PHASE 2 ==================== -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-badge p2">Phase 2</span>
+    </div>
+    <h2>Subacute Recovery</h2>
+    <p class="phase-timeline">Days 6–14 · Restore mobility, activate glutes & core, soft tissue work</p>
+
+    <h3>Stretches</h3>
+    <p class="section-note">Hold each 30–45 seconds, 2–3 sets per side. Perform daily, ideally twice a day.</p>
+
+    <!-- Hip Flexor -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="120" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="65" cy="38" rx="9" ry="9" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <!-- torso upright -->
+          <line x1="65" y1="47" x2="65" y2="78" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- front leg -->
+          <line x1="65" y1="78" x2="85" y2="98" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="85" y1="98" x2="85" y2="120" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- back leg (kneeling) -->
+          <line x1="65" y1="78" x2="45" y2="100" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="45" y1="100" x2="30" y2="120" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- foot on ground -->
+          <line x1="85" y1="120" x2="95" y2="120" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- stretch indicator -->
+          <path d="M 50 82 Q 42 75 48 68" fill="none" stroke="#c04b2d" stroke-width="1.8" stroke-linecap="round"/>
+          <text x="38" y="66" font-family="DM Sans, sans-serif" font-size="7" fill="#c04b2d">stretch</text>
+          <text x="70" y="15" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">Half-Kneeling</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Hip Flexor / Psoas Stretch</h4>
+        <p>Half-kneeling position. Tuck your pelvis (posterior tilt) and lean gently forward. Feel the stretch in the front of the hip/thigh of the down leg, NOT in the lower back.</p>
+        <span class="sets">Hold 30–45 sec · 2–3 sets per side</span>
+      </div>
+    </div>
+
+    <!-- Figure 4 -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="108" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="30" cy="96" rx="9" ry="9" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <line x1="39" y1="96" x2="72" y2="98" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- bottom leg vertical -->
+          <line x1="72" y1="98" x2="82" y2="74" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="82" y1="74" x2="82" y2="60" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- crossed leg (figure 4) -->
+          <line x1="72" y1="98" x2="90" y2="82" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="90" y1="82" x2="100" y2="72" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- ankle crossing -->
+          <circle cx="83" cy="68" r="2" fill="#c04b2d"/>
+          <!-- hands pulling -->
+          <line x1="52" y1="88" x2="80" y2="68" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 2"/>
+          <text x="70" y="25" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">Figure-4 Stretch</text>
+          <text x="108" y="62" font-family="DM Sans, sans-serif" font-size="7" fill="#c04b2d">↑ pull</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Piriformis / Deep Glute Stretch</h4>
+        <p>Lie on your back. Cross one ankle over the opposite knee, then pull the bottom thigh toward your chest. Releases deep external rotators that tighten when the lower back is irritated.</p>
+        <span class="sets">Hold 30–45 sec · 2–3 sets per side</span>
+      </div>
+    </div>
+
+    <!-- Child's Pose -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="112" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <!-- body in child's pose -->
+          <ellipse cx="42" cy="102" rx="7" ry="7" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <!-- curved back -->
+          <path d="M 49 100 Q 75 82 95 100" fill="none" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- arms reaching forward and to side -->
+          <line x1="42" y1="96" x2="22" y2="88" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="42" y1="96" x2="18" y2="96" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 2" opacity="0.5"/>
+          <!-- folded legs -->
+          <line x1="95" y1="100" x2="100" y2="112" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- lateral reach arrow -->
+          <path d="M 24 86 Q 18 80 16 88" fill="none" stroke="#c04b2d" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow1)"/>
+          <text x="70" y="25" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">Child's Pose</text>
+          <text x="70" y="38" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7.5" fill="#6b6560">with lateral reach</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Child's Pose with Lateral Reach</h4>
+        <p>Standard child's pose, then walk both hands to the left to stretch the right QL and lats, hold, then switch. Great for QL release.</p>
+        <span class="sets">Hold 30–45 sec each side · 2–3 sets</span>
+      </div>
+    </div>
+
+    <!-- Hamstring Stretch -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="108" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="30" cy="98" rx="9" ry="9" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <line x1="39" y1="98" x2="75" y2="100" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- leg raised with towel -->
+          <line x1="75" y1="100" x2="85" y2="45" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- towel around foot -->
+          <path d="M 85 45 Q 90 40 88 38" fill="none" stroke="#5a9e6f" stroke-width="2" stroke-linecap="round"/>
+          <line x1="88" y1="38" x2="55" y2="80" stroke="#5a9e6f" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3"/>
+          <!-- other leg flat -->
+          <line x1="75" y1="100" x2="110" y2="108" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- hands holding towel -->
+          <line x1="48" y1="90" x2="55" y2="80" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <text x="70" y="22" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">Hamstring Stretch</text>
+          <text x="100" y="38" font-family="DM Sans, sans-serif" font-size="7" fill="#5a9e6f">towel</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Supine Hamstring Stretch</h4>
+        <p>Lie on your back, loop a towel around one foot, gently straighten the leg toward the ceiling. Tight hamstrings pull on the pelvis and increase lumbar load during sprinting.</p>
+        <span class="sets">Hold 30–45 sec · 2–3 sets per side</span>
+      </div>
+    </div>
+
+    <!-- 90/90 -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="120" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <!-- head -->
+          <ellipse cx="65" cy="42" rx="8" ry="8" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <!-- torso leaning forward -->
+          <line x1="65" y1="50" x2="60" y2="82" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- front leg 90° -->
+          <line x1="60" y1="82" x2="38" y2="95" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="38" y1="95" x2="35" y2="120" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- back leg 90° -->
+          <line x1="60" y1="82" x2="90" y2="95" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="90" y1="95" x2="110" y2="82" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- 90° indicators -->
+          <rect x="36" y="93" width="6" height="6" fill="none" stroke="#c04b2d" stroke-width="1"/>
+          <rect x="86" y="93" width="6" height="6" fill="none" stroke="#c04b2d" stroke-width="1"/>
+          <text x="70" y="20" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">90/90 Hip Stretch</text>
+        </svg>
+      </div>
+      <div>
+        <h4>90/90 Hip Stretch</h4>
+        <p>Sit on the floor, front leg at 90° in front, back leg at 90° behind. Lean your torso forward over the front shin. Opens hip internal and external rotation.</p>
+        <span class="sets">Hold 30–45 sec · 2–3 sets per side</span>
+      </div>
+    </div>
+
+    <h3>Activation Exercises</h3>
+    <p class="section-note">Daily. Focus on waking up the glutes and deep core.</p>
+
+    <!-- Glute Bridge -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="108" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="25" cy="88" rx="9" ry="9" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <!-- torso elevated -->
+          <line x1="34" y1="88" x2="75" y2="75" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- legs bent -->
+          <line x1="75" y1="75" x2="90" y2="90" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="90" y1="90" x2="90" y2="108" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="75" y1="75" x2="100" y2="88" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="100" y1="88" x2="100" y2="108" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- upward arrow at hips -->
+          <line x1="65" y1="82" x2="65" y2="62" stroke="#c04b2d" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow1)"/>
+          <text x="70" y="25" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">Glute Bridge</text>
+          <text x="70" y="38" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7.5" fill="#6b6560">Squeeze glutes at top</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Glute Bridge</h4>
+        <p>Lie on your back, knees bent. Drive through heels, squeeze glutes at the top, hold 3 sec. Focus on GLUTES doing the work, not lower back.</p>
+        <span class="sets">3 × 12</span>
+      </div>
+    </div>
+
+    <!-- Dead Bug -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="108" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="35" cy="98" rx="8" ry="8" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <line x1="43" y1="98" x2="82" y2="100" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- one arm reaching up -->
+          <line x1="50" y1="98" x2="42" y2="68" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- other arm reaching back (overhead) -->
+          <line x1="50" y1="98" x2="28" y2="80" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 2"/>
+          <!-- one leg at 90° -->
+          <line x1="82" y1="100" x2="90" y2="78" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="90" y1="78" x2="100" y2="78" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- other leg extending out -->
+          <line x1="82" y1="100" x2="112" y2="88" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 2"/>
+          <text x="70" y="25" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">Dead Bug</text>
+          <text x="70" y="38" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7.5" fill="#6b6560">Opposite arm + leg extend</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Dead Bug</h4>
+        <p>Arms reaching toward ceiling, knees at 90°. Brace your core. Slowly extend one leg out and the opposite arm overhead, return. Keep lower back pressed into the floor.</p>
+        <span class="sets">3 × 8 per side</span>
+      </div>
+    </div>
+
+    <!-- Bird Dog -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="118" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="40" cy="62" rx="8" ry="8" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <!-- torso horizontal -->
+          <line x1="48" y1="65" x2="90" y2="68" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- arm extending forward -->
+          <line x1="48" y1="65" x2="18" y2="58" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- supporting arm -->
+          <line x1="60" y1="68" x2="60" y2="118" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- leg extending back -->
+          <line x1="90" y1="68" x2="122" y2="62" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- supporting leg -->
+          <line x1="82" y1="68" x2="82" y2="118" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- alignment line -->
+          <line x1="18" y1="56" x2="122" y2="56" stroke="#c04b2d" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+          <text x="70" y="25" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">Bird-Dog</text>
+          <text x="70" y="38" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7.5" fill="#6b6560">No hip rotation</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Bird-Dog</h4>
+        <p>On all fours. Extend one arm forward and the opposite leg back simultaneously. Hold 3–5 sec, return slowly. No rotation of the hips or torso.</p>
+        <span class="sets">3 × 8 per side</span>
+      </div>
+    </div>
+
+    <!-- Clamshell -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="115" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <!-- side lying -->
+          <ellipse cx="30" cy="78" rx="8" ry="8" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <line x1="38" y1="80" x2="65" y2="85" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- bottom leg -->
+          <line x1="65" y1="85" x2="85" y2="100" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="85" y1="100" x2="105" y2="115" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- top leg opening -->
+          <line x1="65" y1="85" x2="88" y2="72" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="88" y1="72" x2="108" y2="88" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- opening arrow -->
+          <path d="M 82 78 Q 86 68 78 64" fill="none" stroke="#c04b2d" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow1)"/>
+          <text x="70" y="22" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">Clamshell</text>
+          <text x="70" y="35" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7.5" fill="#6b6560">Open knee, feet together</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Side-Lying Clamshell</h4>
+        <p>Lie on your side, knees bent ~45°, feet together. Open the top knee without rolling your pelvis back. Targets glute medius — critical for single-leg stability during running.</p>
+        <span class="sets">3 × 15 per side</span>
+      </div>
+    </div>
+
+    <!-- Pallof Press -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="125" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <!-- standing figure -->
+          <ellipse cx="70" cy="28" rx="9" ry="9" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <line x1="70" y1="37" x2="70" y2="85" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="70" y1="85" x2="58" y2="125" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="70" y1="85" x2="82" y2="125" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- arms pressing out -->
+          <line x1="70" y1="55" x2="105" y2="55" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- band from side -->
+          <line x1="130" y1="55" x2="105" y2="55" stroke="#5a9e6f" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="130" y1="30" x2="130" y2="80" stroke="#5a9e6f" stroke-width="3" stroke-linecap="round"/>
+          <!-- resist arrow -->
+          <path d="M 115 48 L 108 48" fill="none" stroke="#c04b2d" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow1)"/>
+          <text x="118" y="44" font-family="DM Sans, sans-serif" font-size="6.5" fill="#c04b2d">resist</text>
+          <text x="55" y="14" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">Pallof Press</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Pallof Press</h4>
+        <p>Stand sideways to an anchored resistance band at chest height. Press the band straight out from your chest and hold 3–5 sec. Resist the rotational pull. Trains anti-rotation core stability.</p>
+        <span class="sets">3 × 10 per side</span>
+      </div>
+    </div>
+
+    <h3>Massage & Soft Tissue Work</h3>
+
+    <div class="massage-card">
+      <h4>Foam Rolling (daily, 60–90 sec per area)</h4>
+      <p>Thoracic spine (upper back), glutes (cross ankle over opposite knee), hamstrings and hip flexors/quads. Pause on tender spots. <strong>Avoid rolling directly on the injured lower back muscles</strong> during this phase.</p>
+    </div>
+
+    <div class="massage-card">
+      <h4>Lacrosse Ball Work</h4>
+      <p><strong>QL release:</strong> Ball just above the iliac crest, slightly to the side of the spine — breathe into it for 60–90 sec per side.<br>
+      <strong>Glute trigger points:</strong> Sit on a lacrosse ball, find tender spots, hold pressure 30–60 sec.<br>
+      <strong>Piriformis:</strong> Same positioning but deeper — closer to the center of the buttock.</p>
+    </div>
+
+    <div class="massage-card">
+      <h4>Professional Massage / Physio (recommended)</h4>
+      <p>1–2 sports massage sessions focusing on glutes, hamstrings, QL, and thoracic erectors. Ask the therapist to avoid deep direct work on the injury site until pain is below 2/10.</p>
+    </div>
+  </div>
+
+  <!-- ==================== PHASE 3 ==================== -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-badge p3">Phase 3</span>
+    </div>
+    <h2>Strengthening & Loading</h2>
+    <p class="phase-timeline">Days 15–28 · Progressive loading, build posterior chain resilience</p>
+    <p class="section-note">Daily pain should be minimal (0–2/10). Perform 3–4× per week. Continue all Phase 2 stretches pre/post workout.</p>
+
+    <!-- RDL -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="125" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="55" cy="32" rx="9" ry="9" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <!-- torso hinged forward -->
+          <line x1="58" y1="40" x2="80" y2="72" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- legs slightly bent -->
+          <line x1="80" y1="72" x2="78" y2="100" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="78" y1="100" x2="78" y2="125" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="80" y1="72" x2="88" y2="100" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="88" y1="100" x2="88" y2="125" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- arms hanging with weight -->
+          <line x1="68" y1="55" x2="62" y2="85" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- dumbbell -->
+          <rect x="56" y="83" width="12" height="5" rx="2" fill="#1a1a1a"/>
+          <!-- hip hinge arrow -->
+          <path d="M 88 65 Q 95 58 92 50" fill="none" stroke="#c04b2d" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow1)"/>
+          <text x="105" y="52" font-family="DM Sans, sans-serif" font-size="6.5" fill="#c04b2d">hinge</text>
+          <text x="70" y="15" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">Romanian Deadlift</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Romanian Deadlift (RDL)</h4>
+        <p>Hinge at the hips, keep a neutral spine, feel the stretch in the hamstrings. Start light (10–15 lb). The single most important exercise for loading the posterior chain without relying on the lower back.</p>
+        <span class="sets">3 × 10</span>
+      </div>
+    </div>
+
+    <!-- Goblet Squat -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="128" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="70" cy="28" rx="9" ry="9" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <!-- torso upright -->
+          <line x1="70" y1="37" x2="70" y2="78" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- legs in squat -->
+          <line x1="70" y1="78" x2="50" y2="105" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="50" y1="105" x2="45" y2="128" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="70" y1="78" x2="90" y2="105" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="90" y1="105" x2="95" y2="128" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- arms holding weight at chest -->
+          <line x1="70" y1="50" x2="70" y2="58" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <rect x="64" y="48" width="12" height="8" rx="3" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+          <text x="70" y="14" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">Goblet Squat</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Goblet Squat</h4>
+        <p>Hold a kettlebell or dumbbell at your chest. Squat with full depth (as pain allows). Reinforces proper hip hinge and core bracing under load.</p>
+        <span class="sets">3 × 10</span>
+      </div>
+    </div>
+
+    <!-- Single Leg Bridge -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="108" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="25" cy="88" rx="8" ry="8" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <line x1="33" y1="88" x2="72" y2="76" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- supporting leg -->
+          <line x1="72" y1="76" x2="88" y2="90" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="88" y1="90" x2="88" y2="108" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- extended leg -->
+          <line x1="72" y1="76" x2="110" y2="68" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="110" y1="68" x2="118" y2="65" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <!-- up arrow -->
+          <line x1="62" y1="82" x2="62" y2="62" stroke="#c04b2d" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow1)"/>
+          <text x="70" y="22" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">Single-Leg Bridge</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Single-Leg Glute Bridge</h4>
+        <p>Progress from the bilateral bridge. One foot on the ground, opposite leg extended. Drive through the heel, squeeze the glute at the top.</p>
+        <span class="sets">3 × 10 per side</span>
+      </div>
+    </div>
+
+    <!-- Side Plank -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="118" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="40" cy="40" rx="8" ry="8" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <!-- body diagonal line -->
+          <line x1="42" y1="48" x2="98" y2="88" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- supporting arm -->
+          <line x1="55" y1="58" x2="55" y2="118" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- elbow -->
+          <circle cx="55" cy="82" r="2.5" fill="#1a1a1a"/>
+          <!-- legs stacked -->
+          <line x1="98" y1="88" x2="115" y2="118" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- top arm up -->
+          <line x1="48" y1="55" x2="35" y2="32" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <!-- alignment line -->
+          <line x1="40" y1="42" x2="112" y2="112" stroke="#c04b2d" stroke-width="1" stroke-dasharray="4 3" opacity="0.4"/>
+          <text x="85" y="22" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">Side Plank</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Side Plank</h4>
+        <p>Elbow on the ground, body in a straight line. For progression, lift the top leg and hold. Trains the lateral core and QL in a controlled way.</p>
+        <span class="sets">3 × 30–45 sec per side</span>
+      </div>
+    </div>
+
+    <!-- Farmer's Carry -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="128" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="70" cy="22" rx="9" ry="9" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <line x1="70" y1="31" x2="70" y2="80" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- legs walking -->
+          <line x1="70" y1="80" x2="55" y2="128" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="70" y1="80" x2="85" y2="128" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- arms holding weights -->
+          <line x1="70" y1="42" x2="45" y2="75" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="70" y1="42" x2="95" y2="75" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- dumbbells -->
+          <rect x="39" y="73" width="12" height="5" rx="2" fill="#1a1a1a"/>
+          <rect x="89" y="73" width="12" height="5" rx="2" fill="#1a1a1a"/>
+          <!-- posture line -->
+          <line x1="70" y1="15" x2="70" y2="85" stroke="#c04b2d" stroke-width="1" stroke-dasharray="4 3" opacity="0.4"/>
+          <text x="70" y="10" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="600" fill="#1a1a1a">Farmer's Carry</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Farmer's Carry</h4>
+        <p>Hold heavy dumbbells or kettlebells at your sides, walk with a tall posture. Trains the entire trunk under load in a spine-friendly way.</p>
+        <span class="sets">3 × 40 meter walks</span>
+      </div>
+    </div>
+
+    <div class="exercise-card" style="grid-template-columns:1fr;">
+      <div>
+        <h4>Also continue:</h4>
+        <p>Cable or band pull-throughs (3×12), dead bug progressions with band or weight (3×8/side), all Phase 2 stretches, foam rolling, and lacrosse ball work. Walking and light cycling are fine as cardio.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PHASE 4 ==================== -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-badge p4">Phase 4</span>
+    </div>
+    <h2>Return to Running</h2>
+    <p class="phase-timeline">Days 28–42 · Begin ONLY when all Phase 3 exercises are pain-free</p>
+
+    <table class="run-table">
+      <thead>
+        <tr><th>Week</th><th>Session 1</th><th>Session 2</th><th>Session 3</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td>5 min jog / 1 min walk × 4</td><td>6 min jog / 1 min walk × 4</td><td>8 min jog / 1 min walk × 3</td></tr>
+        <tr><td><strong>2</strong></td><td>10 min jog, rest, 10 min jog</td><td>15 min continuous jog</td><td>20 min continuous jog</td></tr>
+        <tr><td><strong>3</strong></td><td>20 min + 4×50m strides @ 70%</td><td>20 min + 6×50m strides @ 75%</td><td>25 min + 4×80m @ 80%</td></tr>
+        <tr><td><strong>4</strong></td><td>Shuttle runs, COD drills @ 70–80%</td><td>Add kicking drills</td><td>Full training @ 80–90%</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="border-left-color:var(--phase4);">
+      <strong>Rule:</strong> If pain returns above 2/10 during or after a session, drop back one step and repeat it.
+    </div>
+  </div>
+
+  <!-- ==================== WARM-UP ==================== -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-badge warmup">Warm-Up</span>
+    </div>
+    <h2>Return-to-Play Activation Routine</h2>
+    <p class="phase-timeline">~12–15 minutes · Before every workout, run, or match</p>
+
+    <h3>Part 1 — General Warm-Up (3 min)</h3>
+    <p class="section-note">Light jog or skipping for 2–3 minutes to raise core temperature.</p>
+
+    <h3>Part 2 — Dynamic Mobility (4 min)</h3>
+    <p class="section-note">~30 meters or 8–10 reps per side each.</p>
+
+    <!-- World's Greatest Stretch -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="125" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="72" cy="38" rx="8" ry="8" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <!-- torso -->
+          <line x1="72" y1="46" x2="72" y2="82" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- front lunge leg -->
+          <line x1="72" y1="82" x2="55" y2="105" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="55" y1="105" x2="50" y2="125" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- back leg extended -->
+          <line x1="72" y1="82" x2="110" y2="108" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="110" y1="108" x2="120" y2="125" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- inside arm to ground -->
+          <line x1="72" y1="60" x2="52" y2="108" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <!-- top arm rotating up -->
+          <line x1="72" y1="60" x2="85" y2="30" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- rotation arrow -->
+          <path d="M 80 42 Q 90 35 88 28" fill="none" stroke="#c04b2d" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow1)"/>
+          <text x="65" y="15" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7.5" font-weight="600" fill="#1a1a1a">World's Greatest</text>
+        </svg>
+      </div>
+      <div>
+        <h4>World's Greatest Stretch</h4>
+        <p>Lunge forward, plant your inside hand on the ground next to your front foot, then rotate and reach the other arm to the sky. Incredible hip and thoracic spine opener.</p>
+        <span class="sets">8–10 reps per side</span>
+      </div>
+    </div>
+
+    <div class="exercise-card" style="grid-template-columns:1fr;">
+      <div>
+        <h4>Also include:</h4>
+        <p><strong>Walking Knee Hugs</strong> — pull one knee to chest, step forward, alternate.<br>
+        <strong>Walking Quad Pull with Reach</strong> — pull heel to glute, reach opposite arm overhead.<br>
+        <strong>Lateral Lunge Walk</strong> — step wide to the side, sit into the hip.<br>
+        <strong>Inchworm + Push-Up</strong> — walk hands out, push-up, walk feet to hands.<br>
+        <strong>Leg Swings</strong> — 10 front-to-back and 10 side-to-side per leg.</p>
+      </div>
+    </div>
+
+    <h3>Part 3 — Glute & Core Activation (4 min)</h3>
+
+    <!-- Mini Band Walk -->
+    <div class="exercise-card">
+      <div class="illust">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="128" width="120" height="3" rx="1.5" fill="#c0bab2"/>
+          <ellipse cx="70" cy="22" rx="9" ry="9" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+          <line x1="70" y1="31" x2="70" y2="78" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- quarter squat stance - wide -->
+          <line x1="70" y1="78" x2="45" y2="100" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="45" y1="100" x2="42" y2="128" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="70" y1="78" x2="95" y2="100" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="95" y1="100" x2="98" y2="128" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- mini band -->
+          <path d="M 47 106 Q 70 112 93 106" fill="none" stroke="#5a9e6f" stroke-width="3" stroke-linecap="round"/>
+          <!-- lateral arrows -->
+          <line x1="35" y1="100" x2="22" y2="100" stroke="#c04b2d" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow1)"/>
+          <line x1="105" y1="100" x2="118" y2="100" stroke="#c04b2d" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow1)"/>
+          <text x="70" y="10" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8" font-weight="600" fill="#1a1a1a">Band Lateral Walk</text>
+        </svg>
+      </div>
+      <div>
+        <h4>Mini-Band Lateral Walk</h4>
+        <p>Band around ankles or just above knees. 10 steps each direction, stay low in a quarter-squat. Fires up the glute medius. Follow with Monster Walks (forward at 45° angles).</p>
+        <span class="sets">10 steps each direction × 2 patterns</span>
+      </div>
+    </div>
+
+    <div class="exercise-card" style="grid-template-columns:1fr;">
+      <div>
+        <p><strong>Single-Leg Glute Bridge</strong> — 8 per side, 2-sec hold at top.<br>
+        <strong>Dead Bug</strong> — 5 per side, quick core brace activation.<br>
+        <strong>Pallof Press</strong> — 8 per side, quick controlled reps.</p>
+      </div>
+    </div>
+
+    <h3>Part 4 — Running Build-Up (3 min)</h3>
+    <p class="section-note">Progressive sprints. Walk back between each as recovery.</p>
+
+    <div class="exercise-card" style="grid-template-columns:1fr;">
+      <div>
+        <p><strong>2 × 40m at 50%</strong> — easy striding, long steps, relaxed<br>
+        <strong>2 × 40m at 70%</strong> — increase turnover, stay relaxed through the shoulders<br>
+        <strong>2 × 40m at 85%</strong> — near-sprint but controlled, drive through the glutes<br>
+        <strong>1 × 40m at 95%</strong> — only if everything feels good, full sprint mechanics</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PRINCIPLES ==================== -->
+  <div class="phase" style="border-bottom:none;">
+    <div class="principles">
+      <h3>Key Principles to Prevent Reinjury</h3>
+      <ul style="padding-left:1.2rem;">
+        <li><strong>Glutes are the engine, the lower back is the chassis.</strong> If the glutes are weak or inhibited, the lower back picks up the slack during sprinting. Maintain glute strength work 2–3× per week permanently.</li>
+        <li><strong>Hip mobility is non-negotiable.</strong> Tight hip flexors and hamstrings change pelvic mechanics and load the lumbar spine. Don't skip the warm-up.</li>
+        <li><strong>Brace before you sprint.</strong> Engage your deep core (transverse abdominis) before explosive efforts. Think "tighten your belt" before a hard sprint or kick.</li>
+        <li><strong>Manage your training load.</strong> The most common cause of muscle strains is spikes in volume/intensity. Don't go from a week off to full-speed match play.</li>
+        <li><strong>Sleep and recovery matter.</strong> Soft tissue healing is primarily a nighttime process. Prioritize 7–9 hours and adequate protein (1.6–2.2 g/kg bodyweight).</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>This is a general guideline, not medical advice. Listen to your body — if a phase needs an extra week, take it.<br>Rushing back is the fastest way to re-strain.</p>
+</footer>
+
+</body>
+</html>
