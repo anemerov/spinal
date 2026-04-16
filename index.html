@@ -27,6 +27,8 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  .phase[id] { scroll-margin-top: 1rem; }
 
   body {
     font-family: 'DM Sans', sans-serif;
@@ -270,6 +272,13 @@
     font-size: 0.78rem;
     font-weight: 600;
     color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .timeline-bar .tl-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
   .timeline-bar .tl-item span {
     display: block;
@@ -325,10 +334,10 @@
 
   <!-- TIMELINE BAR -->
   <div class="timeline-bar">
-    <div class="tl-item" style="background:var(--phase1)">Phase 1<span>Days 1–5 · Acute</span></div>
-    <div class="tl-item" style="background:var(--phase2)">Phase 2<span>Days 6–14 · Subacute</span></div>
-    <div class="tl-item" style="background:var(--phase3)">Phase 3<span>Days 15–28 · Loading</span></div>
-    <div class="tl-item" style="background:var(--phase4)">Phase 4<span>Days 28–42 · Running</span></div>
+    <a href="#phase1" class="tl-item" style="background:var(--phase1)">Phase 1<span>Days 1–5 · Acute</span></a>
+    <a href="#phase2" class="tl-item" style="background:var(--phase2)">Phase 2<span>Days 6–14 · Subacute</span></a>
+    <a href="#phase3" class="tl-item" style="background:var(--phase3)">Phase 3<span>Days 15–28 · Loading</span></a>
+    <a href="#phase4" class="tl-item" style="background:var(--phase4)">Phase 4<span>Days 28–42 · Running</span></a>
   </div>
 
   <!-- OVERVIEW -->
@@ -340,7 +349,7 @@
   </div>
 
   <!-- ==================== PHASE 1 ==================== -->
-  <div class="phase">
+  <div class="phase" id="phase1">
     <div class="phase-header">
       <span class="phase-badge p1">Phase 1</span>
     </div>
@@ -476,7 +485,7 @@
   </div>
 
   <!-- ==================== PHASE 2 ==================== -->
-  <div class="phase">
+  <div class="phase" id="phase2">
     <div class="phase-header">
       <span class="phase-badge p2">Phase 2</span>
     </div>
@@ -786,7 +795,7 @@
   </div>
 
   <!-- ==================== PHASE 3 ==================== -->
-  <div class="phase">
+  <div class="phase" id="phase3">
     <div class="phase-header">
       <span class="phase-badge p3">Phase 3</span>
     </div>
@@ -940,7 +949,7 @@
   </div>
 
   <!-- ==================== PHASE 4 ==================== -->
-  <div class="phase">
+  <div class="phase" id="phase4">
     <div class="phase-header">
       <span class="phase-badge p4">Phase 4</span>
     </div>
